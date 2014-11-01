@@ -18,6 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        mpOperationQueue = [[NSOperationQueue alloc] init];
         // Custom initialization
     }
     return self;
@@ -45,5 +46,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)dealloc
+{
+    for (commonDataOperation * opertation in [mpOperationQueue operations]) {
+        opertation.downInfoDelegate = nil;
+    }
+    [mpOperationQueue cancelAllOperations];
+}
+
 
 @end

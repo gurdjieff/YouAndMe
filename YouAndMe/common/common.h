@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define serverIp @"http://"
+
+
 @interface common : NSObject
 
 @end

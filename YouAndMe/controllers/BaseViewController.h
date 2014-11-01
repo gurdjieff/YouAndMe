@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "commonDataOperation.h"
 
 @interface BaseViewController : UIViewController
+<downLoadDelegate>
+{
+    NSOperationQueue * mpOperationQueue;
+}
 
 @end

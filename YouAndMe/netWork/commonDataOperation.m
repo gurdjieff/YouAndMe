@@ -85,13 +85,7 @@
 }
 
 -(void)backToMainThread:(NSString *)dataString
-{
-    NSDictionary * dic = [dataString JSONValue];
-    if ([dic isKindOfClass:[NSDictionary class]]) {
-        dic = [NSDictionary dictionaryWithDictionary:dic];
-    } else {
-        return;
-    }
+{    
     
     if ([downInfoDelegate respondsToSelector:@selector(downLoadWithInfo:with:)]) {
         [self cacheDataToDataBase:dataString];
